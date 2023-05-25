@@ -5,6 +5,17 @@ provider:
   name: aws
   runtime: python3.9
   region: us-east-1
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action: 
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:GetItem
+            - dynamodb:scan
+          Resource: 
+            - arn:aws:dynamodb:us-east-1:264727559380:table/Cities
 
 functions:
   hello:
@@ -13,6 +24,14 @@ functions:
       - httpApi:
           path: /
           method: get
+  insertItem:
+    handler: src/insertItem.handler
+    events:
+      - http:
+          path: /item
+          method: post
+
+
 
 resources:
   Resources:
