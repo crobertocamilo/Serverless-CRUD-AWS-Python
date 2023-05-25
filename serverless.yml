@@ -1,0 +1,32 @@
+service: aws-python-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+
+functions:
+  hello:
+    handler: src/handler.hello
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+resources:
+  Resources:
+    ItemTableNew:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Cities
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - 
+            AttributeName: "Cidade"
+            AttributeType: "S"
+        KeySchema:
+          - 
+            AttributeName: "Cidade"
+            KeyType: "HASH"
+
