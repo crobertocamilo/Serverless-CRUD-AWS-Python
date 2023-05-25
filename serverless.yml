@@ -36,6 +36,12 @@ functions:
       - http:
           path: /items
           method: get
+  getItem:
+    handler: src/getItem.handler
+    events:
+      - http:
+          path: /items/{Cidade}
+          method: get          
 
 
 resources:
