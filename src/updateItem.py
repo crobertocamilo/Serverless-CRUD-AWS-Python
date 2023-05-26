@@ -8,27 +8,39 @@ import decimal
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Cities')
 
-def handler(event, contest):
+def handler(event, context):
 
     logger.info(event)
 
-    Cidade = event['queryStringParameters']['Cidade']
+    requestBody = json.loads(event['body'])
+
+    Cidade = requestBody['Cidade']
+    updateKey = requestBody['updateKey']
+    updateValue = requestBody['updateValue']
 
     try:
 
-        response = table.get_item(
+        response = table.update_item(
             Key = {
                 'Cidade': Cidade
-            }
+            },
+            UpdateExpression='set %s = :value' % updateKey,
+            ExpressionAttributeValues={
+                ':value': updateValue
+            },
+            ReturnValues='UPDATED_NEW'
         )
 
-        if 'Item' in response:
-            return buildResponse(200, response['Item'])
-        else:
-            return buildResponse(404, {f'Mensagem: {Cidade} não encontrada no banco de dados.'})
+        body = {
+            'Operação': 'SALVAR',
+            'Mensagem': 'SUCESSO',
+            'Item': requestBody
+        } 
+
+        return buildResponse(200, body)       
     
     except:
-        logger.exception('Erro ao realizar a pesquisa!')
+        logger.exception('Erro ao realizar a alteração!')
 
 def buildResponse(statusCode, body=None):
     response = {

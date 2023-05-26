@@ -14,6 +14,7 @@ provider:
             - dynamodb:UpdateItem
             - dynamodb:GetItem
             - dynamodb:scan
+            - dynamodb:DeleteItem
           Resource: 
             - arn:aws:dynamodb:us-east-1:264727559380:table/Cities
 
@@ -41,7 +42,13 @@ functions:
     events:
       - http:
           path: /items/{Cidade}
-          method: get          
+          method: get     
+  updateItem:
+    handler: src/updateItem.handler
+    events:
+      - http:
+          path: /items/{Cidade}
+          method: put      
 
 
 resources:
