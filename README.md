@@ -1,101 +1,53 @@
-<!--
-title: 'AWS Simple HTTP Endpoint example in Python'
-description: 'This template demonstrates how to make a simple HTTP API with Python running on AWS Lambda and API Gateway using the Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: python
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+## Desafio 2 do ***Bootcamp Cloud* AWS**
 
-# Serverless Framework Python HTTP API on AWS
+Evento promovido pela [Digital Innovation One - DIO](https://www.dio.me/en), com patrocínio da [Amazon Web Services - AWS](https://aws.amazon.com/pt/).
 
-This template demonstrates how to make a simple HTTP API with Python running on AWS Lambda and API Gateway using the Serverless Framework.
+<div align="right">
+  <img src="https://github.com/crobertocamilo/linux_servidor_apache/blob/main/assets/logo_bootcamp.webp?raw=true.webp" alt="logo bootcamp" width=20%/>
+</div>
 
-This template does not include any kind of persistence (database). For more advanced examples, check out the [serverless/examples repository](https://github.com/serverless/examples/)  which includes DynamoDB, Mongo, Fauna and other examples.
+--- 
+## Desafio
+**Infraestrutura como código: Desenvolver uma aplicação *serverless* para operações básicas (CRUD) numa tabela no AWS DynamoDB. O projeto deve considerar a criação da tabela, criação das rotas da API e permissões necessárias. Utilizar o *Serverless Framework* para a implementação, com livre escolha da linguagem de programação e tema/esquema da tabela.**
 
-## Usage
+---
+### Objetivo
 
-### Deployment
+Desenvolver uma API *serverless* para criação e operações básicas num banco de dados (inserir item, consultar, atualizar e deletar) na AWS. A aplicação deve implementar a solução através do *Serverlesse Framework* (sem utilizar o console da AWS) e funções Lambda, em python, para integrar os serviços API Gateway e DynamoDB.
 
-```
-$ serverless deploy
-```
+---
+### Desenvolvimento da solução:
 
-After deploying, you should see output similar to:
+A solução foi desenvolvida utilizando funções Lambda em **python**, uma função para cada tipo de operação sobre a tabela, sendo o código das funções apresentado na pasta [src/](https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/tree/main/src). 
 
-```bash
-Deploying aws-python-http-api-project to stage dev (us-east-1)
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/aws_services.png?raw=true" alt="Estrutura de serviços na AWS" width=100%/>
+</div>
 
-✔ Service deployed to stack aws-python-http-api-project-dev (140s)
+<div align="center">
+Integração da API com o bando de dados através de função Lambda. 
+</div>
 
-endpoint: GET - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com/
-functions:
-  hello: aws-python-http-api-project-dev-hello (2.3 kB)
-```
+<br></br>
+A integração entre os serviços da AWS é realizada através do **Serverless Framework**. O arquivo [serverless.yml](https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/serverless.yml) define a estrutura de recursos (**API Gateway**, **Lambda**, **DynamoDB**) e é utilizado para a criação de uma estrutura de serviços (*stack*) no **CloudFormation**, compreendendo também criação das permissões necessárias no **IAM** e registro de *logs* no **CloudWatch**.
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [http event docs](https://www.serverless.com/framework/docs/providers/aws/events/apigateway/).
+---
+### Implementando a solução:
 
-### Invocation
+Requisitos:
+* Serverless Framework instalado;
+* AWS CLI instalado e configurado com as credenciais da conta (AccessKey e )
 
-After successful deployment, you can call the created application via HTTP:
+Para o *deploy* da solução na AWS, clone este repositório e acesse a pasta raiz pelo terminal. Digite:
 
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
-```
+`serverless deploy`
 
-Which should result in response similar to the following (removed `input` content for brevity):
+Se a estrutura de serviços for construída com sucesso em sua conta da AWS, será exibido no terminal uma mensagem como a mostrada abaixo, onde são listados os *endpoints* criadas para cada método/operação no banco de dados. 
 
-```json
-{
-  "message": "Go Serverless v3.0! Your function executed successfully!",
-  "input": {
-    ...
-  }
-}
-```
+Os links mostrados na imagem são apenas exemplos e não estão mais disponíveis.
 
-### Local development
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/serverless_deploy.png?raw=true" alt="Estrutura de serviços na AWS" width=80%/>
+</div>
 
-You can invoke your function locally by using the following command:
 
-```bash
-serverless invoke local --function hello
-```
-
-Which should result in response similar to the following:
-
-```
-{
-  "statusCode": 200,
-  "body": "{\n  \"message\": \"Go Serverless v3.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
-}
-```
-
-Alternatively, it is also possible to emulate API Gateway and Lambda locally by using `serverless-offline` plugin. In order to do that, execute the following command:
-
-```bash
-serverless plugin install -n serverless-offline
-```
-
-It will add the `serverless-offline` plugin to `devDependencies` in `package.json` file as well as will add it to `plugins` in `serverless.yml`.
-
-After installation, you can start local emulation with:
-
-```
-serverless offline
-```
-
-To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
-
-### Bundling dependencies
-
-In case you would like to include 3rd party dependencies, you will need to use a plugin called `serverless-python-requirements`. You can set it up by running the following command:
-
-```bash
-serverless plugin install -n serverless-python-requirements
-```
-
-Running the above will automatically add `serverless-python-requirements` to `plugins` section in your `serverless.yml` file and add it as a `devDependency` to `package.json` file. The `package.json` file will be automatically created if it doesn't exist beforehand. Now you will be able to add your dependencies to `requirements.txt` file (`Pipfile` and `pyproject.toml` is also supported but requires additional configuration) and they will be automatically injected to Lambda package during build process. For more details about the plugin's configuration, please refer to [official documentation](https://github.com/UnitedIncome/serverless-python-requirements).
