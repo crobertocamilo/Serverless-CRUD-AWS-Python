@@ -16,7 +16,8 @@ def handler(event, context):
 
         queryStringParameters = event.get('queryStringParameters')
         if queryStringParameters is None:
-            return buildResponse(400, {'Mensagem': 'Parâmetro "Cidade" da solicitação ausente.'})
+            #return buildResponse(400, {'Mensagem': 'Parâmetro "Cidade" da solicitação ausente.'})
+            return buildResponse(404, {'Mensagem': 'Cidade: %s não encontrada.' % Cidade})
         
         Cidade = event['queryStringParameters']['Cidade']
         
