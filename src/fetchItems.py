@@ -8,7 +8,7 @@ import decimal
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Cities')
 
-def handler(event, contest):
+def handler(event, context):
 
     logger.info(event)
 

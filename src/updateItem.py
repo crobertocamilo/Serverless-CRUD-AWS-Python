@@ -32,7 +32,7 @@ def handler(event, context):
         )
 
         body = {
-            'Operação': 'SALVAR',
+            'Operação': 'ATUALIZAR',
             'Mensagem': 'SUCESSO',
             'Item': requestBody
         } 

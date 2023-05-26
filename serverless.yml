@@ -19,10 +19,10 @@ provider:
             - arn:aws:dynamodb:us-east-1:264727559380:table/Cities
 
 functions:
-  hello:
-    handler: src/handler.hello
+  status:
+    handler: src/handler.status
     events:
-      - httpApi:
+      - http:
           path: /
           method: get
   insertItem:
@@ -49,7 +49,12 @@ functions:
       - http:
           path: /items/{Cidade}
           method: put      
-
+  deleteItem:
+    handler: src/deleteItem.handler
+    events:
+      - http:
+          path: /items/{Cidade}
+          method: delete
 
 resources:
   Resources:

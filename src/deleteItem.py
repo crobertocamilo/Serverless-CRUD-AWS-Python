@@ -4,19 +4,30 @@ import logging
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-#dynamodbTableName = 'Cities'
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Cities')
 
 def handler(event, context):
 
     logger.info(event)
-    requestBody = json.loads(event['body'])
+    requestBody = event.get('body')
+
+    if requestBody is None:
+        return buildResponse(400, {'Mensagem': 'Corpo da solicitação ausente.'})
 
     try:
-        table.put_item(Item = requestBody)
+        requestBody = json.loads(event['body'])
+        Cidade = requestBody['Cidade']
+        
+        table.delete_item(
+            Key = {
+                'Cidade': Cidade
+            },
+            ReturnValues='ALL_OLD'
+        )
+
         body = {
-            'Operação': 'SALVAR',
+            'Operação': 'DELETAR',
             'Mensagem': 'SUCESSO',
             'Item': requestBody
         }
@@ -24,7 +35,8 @@ def handler(event, context):
         return buildResponse(200, body)
     
     except:
-        logger.exception('Erro ao inserir o novo item!')
+        logger.exception('Erro na tentativa de deletar o item!')
+        return buildResponse(500, {'Mensagem': 'Erro ao processar a solicitação.'})
 
 def buildResponse(statusCode, body=None):
     response = {

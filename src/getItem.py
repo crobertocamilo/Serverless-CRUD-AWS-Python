@@ -8,14 +8,18 @@ import decimal
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('Cities')
 
-def handler(event, contest):
+def handler(event, context):
 
     logger.info(event)
 
-    Cidade = event['queryStringParameters']['Cidade']
-
     try:
 
+        queryStringParameters = event.get('queryStringParameters')
+        if queryStringParameters is None:
+            return buildResponse(400, {'Mensagem': 'Parâmetro "Cidade" da solicitação ausente.'})
+        
+        Cidade = event['queryStringParameters']['Cidade']
+        
         response = table.get_item(
             Key = {
                 'Cidade': Cidade

@@ -1,10 +1,10 @@
 import json
 
 
-def hello(event, context):
+def status(event, context):
     body = {
-        "message": "Go Serverless v3.0! Your function executed successfully!",
-        "input": event,
+        "message": "A API está online!"
+        #"input": event,
     }
 
     response = {"statusCode": 200, "body": json.dumps(body)}
