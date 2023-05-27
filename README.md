@@ -104,20 +104,33 @@ Pesquisando um registro pelo id (uma Cidade pelo nome): ERRO.
 #### **> Listando os itens da tabela (*fetchItems*)**
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="70%"/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="65%"/>
 </div>
 
 <div align="center"> 
+Lista (trecho) dos itens salvos da tabela.
+</div>
+
+<br></br>
+
+#### **> Alterando um registro (*updateItem*)**
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="65%"/>
+</div>
+
+<div align="center"> 
+Lista (trecho) dos itens salvos da tabela.
 </div>
 
 
 <table>
   <tr>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="100%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update1_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="100%">
     </td>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="110%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update2_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="110%">
     </td>
   </tr>
 </table>
