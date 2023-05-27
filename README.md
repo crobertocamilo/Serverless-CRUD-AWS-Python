@@ -21,7 +21,7 @@ Desenvolver uma API *serverless* para criar uma tabela e realizar operações b�
 A solução foi desenvolvida utilizando funções Lambda em **python**, uma função para cada tipo de operação sobre a tabela, sendo o código das funções apresentado na pasta [src](https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/tree/main/src). 
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/aws_services.png?raw=true" alt="Estrutura de serviços na AWS" width=100%/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/aws_services.png?raw=true" alt="Estrutura de serviços na AWS" width=85%/>
 </div>
 
 <div align="center">
@@ -52,4 +52,32 @@ Os links mostrados na imagem são apenas exemplos e não estão mais disponívei
   <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/serverless_deploy.png?raw=true" alt="Estrutura de serviços na AWS" width=80%/>
 </div>
 
+---
+### Utilizando a API:
 
+Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramente para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
+
+#### **Inserindo itens (insertItem)**
+  O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*).
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width=70%/>
+</div>
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert_table.png?raw=true" alt="Novo registro inserido na tabela" width=70%/>
+</div>
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width="70%">
+    </td>
+    <td>
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert_table.png?raw=true" alt="Novo registro inserido na tabela" width="70%">
+    </td>
+  </tr>
+</table>
+
+
+  
