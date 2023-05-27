@@ -49,7 +49,7 @@ Se a estrutura de serviços for construída com sucesso em sua conta da AWS, ser
 Os links mostrados na imagem são apenas exemplos e não estão mais disponíveis.
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/serverless_deploy.png?raw=true" alt="Estrutura de serviços na AWS" width=80%/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/serverless_deploy.png?raw=true" alt="Estrutura de serviços na AWS" width=70%/>
 </div>
 
 ---
@@ -61,12 +61,25 @@ Como este projeto não compreende o desenvolvimento de um *front-end*, a intera�
   O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*).
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width=70%/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width=60%/>
 </div>
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert_table.png?raw=true" alt="Novo registro inserido na tabela" width=70%/>
+Inserindo um novo registro na tabela. 
 </div>
+
+<br></br>
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert_table.png?raw=true" alt="Novo registro inserido na tabela" width=45%/>
+</div>
+<div align="center">
+Novo registro salvo no DynamoDB.
+</div>
+
+
+
+
 
 <table>
   <tr>
