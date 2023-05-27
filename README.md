@@ -82,10 +82,10 @@ Novo registro salvo no DynamoDB.
 <table>
   <tr>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="90%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="100%">
     </td>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="95%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="110%">
     </td>
   </tr>
 </table>
