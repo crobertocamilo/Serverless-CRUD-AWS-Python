@@ -58,7 +58,7 @@ Os links mostrados na imagem são apenas exemplos e não estão mais disponívei
 Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramente para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
 
 #### **> Inserindo itens (*insertItem*)**
-  O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*).
+  O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*) ou *id*.
 
 <div align="center">
   <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width=60%/>
@@ -96,7 +96,7 @@ Pesquisando um registro pelo id (uma Cidade pelo nome): SUCESSO.
 </div>
 
 <div align="center">
-Pesquisando um registro pelo id (uma Cidade pelo nome): ERRO. 
+Pesquisando um registro pelo id: ERRO. 
 </div>
 
 <br></br>
@@ -118,10 +118,10 @@ Lista (trecho) dos itens salvos da tabela.
 <table>
   <tr>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update1_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="100%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update1_highlights.png?raw=true" alt="Modificando registro 1" width="100%">
     </td>
     <td>
-      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update2_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="110%">
+      <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update2_highlights.png?raw=true" alt="Modificando registro 2" width="100%">
     </td>
   </tr>
 </table>
@@ -143,11 +143,11 @@ Tabela atualizada com as alterações.
 #### **> Removendo um registro (*deleteItem*)**
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="65%"/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/delete.png?raw=true" alt="Deletando um registro" width="65%"/>
 </div>
 
 <div align="center"> 
-Lista (trecho) dos itens salvos da tabela.
+Deletando um registro.
 </div>
 
   
