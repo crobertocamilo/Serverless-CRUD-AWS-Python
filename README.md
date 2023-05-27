@@ -57,7 +57,7 @@ Os links mostrados na imagem são apenas exemplos e não estão mais disponívei
 
 Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramente para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
 
-#### **> Inserindo itens (insertItem)**
+#### **> Inserindo itens (*insertItem*)**
   O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*).
 
 <div align="center">
@@ -77,10 +77,12 @@ Inserindo um novo registro na tabela.
 Novo registro salvo no DynamoDB.
 </div>
 
+<br></br>
+
 #### **> Pesquisando item pelo id (*getItem*)**
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="60%"/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="70%"/>
 </div>
 
 <div align="center">
@@ -90,14 +92,23 @@ Pesquisando um registro pelo id (uma Cidade pelo nome): SUCESSO.
 <br></br>
 
 <div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="60%"/>
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="70%"/>
 </div>
 
 <div align="center">
 Pesquisando um registro pelo id (uma Cidade pelo nome): ERRO. 
 </div>
 
+<br></br>
 
+#### **> Listando os itens da tabela (*fetchItems*)**
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="70%"/>
+</div>
+
+<div align="center"> 
+</div>
 
 
 <table>
