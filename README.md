@@ -115,15 +115,6 @@ Lista (trecho) dos itens salvos da tabela.
 
 #### **> Alterando um registro (*updateItem*)**
 
-<div align="center">
-  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="65%"/>
-</div>
-
-<div align="center"> 
-Lista (trecho) dos itens salvos da tabela.
-</div>
-
-
 <table>
   <tr>
     <td>
@@ -135,8 +126,28 @@ Lista (trecho) dos itens salvos da tabela.
   </tr>
 </table>
 <div align="center">
-Pesquisando registros pelo id: sucesso (esq.) e erro (dir.).
+Modificando registros da tabela.
 </div>
 
+<br></br>
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/update_table_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="50%"/>
+</div>
+
+<div align="center">
+Tabela atualizada com as alterações. 
+</div>
+
+<br></br>
+#### **> Removendo um registro (*deleteItem*)**
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/fetch_highlights.png?raw=true" alt="Listando itens da tabela" width="65%"/>
+</div>
+
+<div align="center"> 
+Lista (trecho) dos itens salvos da tabela.
+</div>
 
   
