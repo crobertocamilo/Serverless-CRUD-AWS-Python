@@ -77,7 +77,28 @@ Inserindo um novo registro na tabela.
 Novo registro salvo no DynamoDB.
 </div>
 
-#### **> Pesquisando item pelo id (getItem)**
+#### **> Pesquisando item pelo id (*getItem*)**
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get2_highlights.png?raw=true" alt="Pesquisando pelo id - Sucesso" width="60%"/>
+</div>
+
+<div align="center">
+Pesquisando um registro pelo id (uma Cidade pelo nome): SUCESSO. 
+</div>
+
+<br></br>
+
+<div align="center">
+  <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/get3_highlights.png?raw=true" alt="Pesquisando pelo id - Erro" width="60%"/>
+</div>
+
+<div align="center">
+Pesquisando um registro pelo id (uma Cidade pelo nome): ERRO. 
+</div>
+
+
+
 
 <table>
   <tr>
