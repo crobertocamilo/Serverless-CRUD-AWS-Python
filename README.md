@@ -57,9 +57,8 @@ Os links mostrados na imagem são apenas exemplos e não estão mais disponívei
 
 Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramenta para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
 
-O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*) e o *id* dos registros.
+O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham obrigatoriamente todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste projeto, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*) e o *id* dos registros.
 
-<br></br>
 
 #### **> Inserindo itens (*insertItem*)**
 
