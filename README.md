@@ -42,7 +42,7 @@ Requisitos:
 
 Para o *deploy* da solução na AWS, clone este repositório e acesse a pasta raiz pelo terminal. Digite:
 
-    `serverless deploy`
+  `serverless deploy`
 
 Se a estrutura de serviços for construída com sucesso em sua conta da AWS, será exibido no terminal uma mensagem como a mostrada abaixo, onde são listados os *endpoints* criados para cada método/operação no banco de dados. 
 
@@ -55,10 +55,13 @@ Os links mostrados na imagem são apenas exemplos e não estão mais disponívei
 ---
 ### Utilizando a API:
 
-Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramente para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
+Como este projeto não compreende o desenvolvimento de um *front-end*, a interação com os *endpoints* da API deve ser feita através de um navegador (GET) ou utilizando uma ferramenta para testar APIs, como por exemplo o [**Postman**](https://www.postman.com/).
+
+O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*) e o *id* dos registros.
+
+<br></br>
 
 #### **> Inserindo itens (*insertItem*)**
-  O DynamoBD é um banco de dados NoSQL do tipo chave-valor, por isso seus objetos seguem a estrutura *"nomeChave": "valorAtributo"*. Não é necessário que todos os registros tenham todos os atribuitos pois as tabelas no DynamoBD não possuem um esquema rígido. Neste exemplo, o único campo obrigatório é *Cidade*, que á chave primária da tabela (*partition key*) ou *id*.
 
 <div align="center">
   <img src="https://github.com/crobertocamilo/Serverless-CRUD-AWS-Python/blob/main/assets/insert.png?raw=true" alt="Inserindo um registro" width=60%/>
