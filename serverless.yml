@@ -15,8 +15,8 @@ provider:
             - dynamodb:GetItem
             - dynamodb:scan
             - dynamodb:DeleteItem
-          Resource: 
-            - arn:aws:dynamodb:us-east-1:264727559380:table/Cities
+          Resource:
+            Fn::Sub: "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/Cities"
 
 functions:
   status:
@@ -71,4 +71,3 @@ resources:
           - 
             AttributeName: "Cidade"
             KeyType: "HASH"
-
